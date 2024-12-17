@@ -1,0 +1,9 @@
+array/string: observe carefully, there always exist some rules
+two-pointer: set two-pointer at the beginning and the end
+sliding windows: set the index of left window and forward traversal, 
+    then move the left window while the condition is satisfied
+matrix: try another bit or bit mask to solve in-place
+-
+solved: 22/150
+-
+hashmap: 
