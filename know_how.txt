@@ -6,4 +6,10 @@ matrix: try another bit or bit mask to solve in-place
 -
 solved: 22/150
 -
-hashmap: 
+hashmap: careful the length of iterable while transforming to set
+intervals: overlapping or non-overlapping on the interval, 
+    often appearing on the first element with the initial condition
+-
+solved: 35/150
+-
+stack: 
