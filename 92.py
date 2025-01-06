@@ -29,21 +29,39 @@ class Solution:
         if left == right:
             return head
 
-        dummy: ListNode = ListNode(next=head)
+        # Add 1 more node while the left is 1 is changing the first of `head`.
+        dummy_head: ListNode = ListNode(next=head)
 
-        previous: ListNode = dummy
+        previous: ListNode = dummy_head
+        #find the binginning place to reserve
         for _ in range(left - 1):
-            previous = previous.next
+            previous = previous.next  #1 -> 2 -> 3 -> 4 -> 5 -> 6 -> N
 
-        current: ListNode = previous.next
+        #reverse the nodes in the range
+        #practice [left, right] is [2, 5] and head is `1 -> 2 -> … -> 6 -> N`
+        current: ListNode = previous.next  #2 -> 3 -> 4 -> 5 -> 6 -> N
         for _ in range(right - left):
-            temp: ListNode = current.next
+            #iterate
+            temp: ListNode = current.next  #3 -> 4 -> 5 -> 6 -> N
+            #4 -> 5 -> 6 -> N
+            #5 -> 6 -> N
 
-            current.next = temp.next
-            temp.next = previous.next  #backward
-            previous.next = temp
+            #split
+            current.next = temp.next  #*2* -> 4 -> 5 -> 6 -> N
+            #*2* -> 5 -> 6 -> N
+            #*2* -> 6 -> N
 
-        return dummy.next
+            #backward
+            temp.next = previous.next  #*3* -> 2 -> 4 -> 5 -> 6 -> N
+            #*4* -> 3 -> 2 -> 5 -> 6 -> N
+            #*5* -> 4 -> 3 -> 2 -> 6 -> N
+
+            #connect
+            previous.next = temp  #*1* -> 3 -> 2 -> 4 -> 5 -> 6 -> N
+            #*1* -> 4 -> 3 -> 2 -> 5 -> 6 -> N
+            #*1* -> 5 -> 4 -> 3 -> 2 -> 6 -> N
+
+        return dummy_head.next
 
 
 #%%    Main Function
