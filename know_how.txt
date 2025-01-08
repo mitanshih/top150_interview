@@ -12,4 +12,11 @@ intervals: overlapping or non-overlapping on the interval,
 -
 solved: 35/150
 -
-stack: 
+stack: focus on the order of elements in the stack
+linked-list: it always traverses in one direction. 
+    If the modification operates outside `current`, 
+    set a pointer to record the head before iterating.
+-
+solved: 49/150
+-
+binary tree general: 
