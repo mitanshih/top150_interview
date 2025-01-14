@@ -57,7 +57,7 @@ class Solution:
         for string in s:
             if string in substring:
                 result = max(len(substring), result)
-                #remove all elementes before `string` in `substring`
+                #remove all elements before `string` in `substring`
                 while s[substring_start] != string:
                     substring.remove(s[substring_start])
                     substring_start += 1
